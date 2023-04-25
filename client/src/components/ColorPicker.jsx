@@ -1,8 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { SketchPicker } from 'react-color'
+import { useSnapShot } from  'valtio'
+
+import state from '../store'
+
 
 const ColorPicker = () => {
+  const snap = useSnapShot(state);
+
   return (
-    <div>ColorPicker</div>
+    <div className='abolute left-full ml-3'>
+      <SketchPicker 
+        color={snap.color}
+      />
+    </div>
   )
 }
 
