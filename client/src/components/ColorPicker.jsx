@@ -1,6 +1,6 @@
 import React from 'react';
 import { SketchPicker } from 'react-color'
-import { useSnapShot } from  'valtio'
+import { useSnapshot } from  'valtio'
 
 import state from '../store'
 
