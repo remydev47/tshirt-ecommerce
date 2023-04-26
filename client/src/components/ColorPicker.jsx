@@ -6,7 +6,7 @@ import state from '../store'
 
 
 const ColorPicker = () => {
-  const snap = useSnapShot(state);
+  const snap = useSnapshot(state);
 
   return (
     <div className='abolute left-full ml-3'>
