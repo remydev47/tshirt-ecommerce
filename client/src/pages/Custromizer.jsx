@@ -10,7 +10,30 @@ import { fadeAnimation, slideAnimation } from '../config/motion';
 import { AIpicker, ColorPicker, CustomButton, Filepicker, Tab } from '../components';
 
 const Custromizer = () => {
-  const snap = useSnapshot(state)
+  const snap = useSnapshot(state);
+  const [file, setFile] = useState('');
+  const [prompt, setPrompt] = useState('');
+  const [generatingImg, setGeneratingImg] = useState(false);
+  const [editorTab, setEditorTab] = useState("");
+  const [activeEditorTab, setActiveEditorTab] = useState({
+    logoShirt: true,
+    stylishShirt: false,
+  })
+
+  //show tab content when clicked
+  const generateTabContent = () => {
+    switch (activeEditorTab) {
+      case "colorpicker":
+        return <ColorPicker />
+      case "filepicker":
+        return  <Filepicker />
+      case "aipicker":
+        return <AIpicker />
+    
+      default:
+        return null;
+    }
+  }
 
   return (
     <AnimatePresence>
@@ -27,9 +50,10 @@ const Custromizer = () => {
                   <Tab 
                     key={tab.name}
                     tab={tab}
-                    handleClick={() => {}}
+                    handleClick={() => setActiveEditorTab(tab.name)}
                   />
                 ))}
+                {generateTabContent()}
               </div>
             </div>
           </motion.div>
