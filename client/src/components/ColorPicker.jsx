@@ -12,6 +12,8 @@ const ColorPicker = () => {
     <div className='abolute left-full ml-3'>
       <SketchPicker 
         color={snap.color}
+        disableAlpha
+        onChange={(color) => state.color = color.hex }
       />
     </div>
   )
