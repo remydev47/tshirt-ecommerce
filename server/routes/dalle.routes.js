@@ -6,8 +6,8 @@ const router = express.Router()
 
 dotenv.config();
 
-router.route('/').get((res, req) => {
-    res.status(200).json({'message': "hello from dalle"})
+router.route('/').get((req, res) => {
+    res.status(200).json({message: "hello from dalle"})
 })
 
 export default router;

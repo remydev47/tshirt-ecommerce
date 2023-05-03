@@ -1,5 +1,4 @@
 import express from 'express'
-import mongoose from 'mongoose'
 import * as dotenv from  'dotenv'
 import cors from 'cors';
 import dalleRoutes from './routes/dalle.routes.js'
@@ -16,4 +15,4 @@ app.get('/', (res, req) => {
     res.status(200).json({message : 'Hello from dalle'})
 })
 
-app.listen(8080, () => console.log('Server has been started on Port 8080') )
+app.listen(8080, () => console.log('Server has been started on Port 8080'))
